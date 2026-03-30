@@ -11,4 +11,5 @@ export interface PortalClientModel {
   uf: string;
   cnpj: string;
   inscricao_estadual?: string;
+  password?: string;
 }

@@ -7,8 +7,11 @@ export async function GET(request: Request, segmentData: { params: Params }) {
   // ATUALIZAÇÃO NEXT 15+: Parâmetros dinâmicos agora devem ser aguardados (Promise)
   const { clientId } = await segmentData.params;
 
-  // Chamamos o serviço que bate na API do Portal e retorna true se for autêntico
-  const isValid = await accessControlService.validateAndSetSession(clientId);
+  const { searchParams } = new URL(request.url);
+  const token = searchParams.get("token");
+
+  // Chamamos o serviço verificando o ID da URL primária e o Token do Query String
+  const isValid = await accessControlService.validateAndSetSession(clientId, token);
 
   if (isValid) {
     // Escolas válidas são marcadas com Cookie e jogadas pra /inscricao

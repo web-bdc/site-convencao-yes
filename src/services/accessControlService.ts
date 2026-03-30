@@ -9,9 +9,13 @@ export class AccessControlService {
    * @param cliendId O identificador passado no fim da URL
    * @returns Booleano indicando se foi sucesso ou se o ID era falso
    */
-
-  async validateAndSetSession(clientId: string): Promise<boolean> {
+  async validateAndSetSession(clientId: string, providedToken: string | null): Promise<boolean> {
     try {
+      if (!providedToken) {
+        console.warn(`Tentativa falha de acesso: Client_ID ${clientId} não enviou o token.`);
+        return false;
+      }
+
       const clientDetails = await portalHttpClient.getClientById(clientId);
 
       if (!clientDetails) {
@@ -19,8 +23,17 @@ export class AccessControlService {
         return false;
       }
 
+      // NOVO BLOQUEIO: Verificando se a senha (Token Bcrypt) atrelada à escola é igual à provida na URL
+      if (clientDetails.password !== providedToken) {
+        console.warn(`Proteção Ativa: Tentativa com Token inválido para o Client_ID: ${clientId}`);
+        return false;
+      }
+
+      // Retiramos a senha da memória após ela ser validada com sucesso, por segurança
+      delete clientDetails.password;
+
       // Se achou, o cliente existe e a escola está habilitada (SSO aprovado)
-      // Guardamos ele na sessão (Cookie)
+      // Guardamos ele na sessão (Cookie) sem a senha
       await createSession(clientDetails);
       return true;
 
