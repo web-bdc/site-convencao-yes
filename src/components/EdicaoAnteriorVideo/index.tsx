@@ -11,8 +11,7 @@ export default function EdicaoAnteriorVideo() {
           width="100%"
           height="100%"
           src="https://www.youtube.com/embed/G9e_BFlaVGI?si=cFgkMnJ3feUesCH2"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; looping"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         ></iframe>
       </div>
     </div>

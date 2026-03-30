@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <Image src="/logos/logo-branca.png" alt="Logo YES Convenção" width={90} height={50} />
+        <Image src="/logos/logo-branca.png" alt="Logo YES Convenção" width={90} height={50} style={{ width: "auto", height: "auto" }} />
         <span className={styles.copy}>© {dataAno} - Grupo BDC | Todos os direitos reservados</span>
       </div>
     </footer>
