@@ -1,4 +1,4 @@
-/* Variáveis CSS para cores do tema */
+/* Variáveis CSS*/
 :root {
   --color-primary: #f4f4f5;
   --color-yes: #ed2939;
@@ -23,23 +23,20 @@
   --color-destructive: #b91c1c;
   --border-radius: 20px;
   --box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-  --gradient-primary: linear-gradient(
-    -60deg,
-    #e8283a 31%,
-    #eb392d 50%,
-    #ee4823 63%,
-    #f9aa65 88%,
-    #ffdc87 100%
-  );
-  --gradient-primary-reverse: linear-gradient(
-    60deg,
-    #e8283a 31%,
-    #eb392d 50%,
-    #ee4823 63%,
-    #f9aa65 88%,
-    #ffdc87 100%
-  );
+  --gradient-primary: linear-gradient(-60deg,
+      #e8283a 31%,
+      #eb392d 50%,
+      #ee4823 63%,
+      #f9aa65 88%,
+      #ffdc87 100%);
+  --gradient-primary-reverse: linear-gradient(60deg,
+      #e8283a 31%,
+      #eb392d 50%,
+      #ee4823 63%,
+      #f9aa65 88%,
+      #ffdc87 100%);
 }
+
 *,
 *::before,
 *::after {
@@ -72,9 +69,11 @@ h6 {
   font-weight: 500;
   line-height: 1.2;
 }
+
 h1 {
   font-size: 1.45rem !important;
 }
+
 h2 {
   font-size: 1.25rem !important;
 }
@@ -117,14 +116,17 @@ select {
   html {
     font-size: 1.125rem;
   }
+
   h1 {
     font-size: 2.25rem !important;
   }
+
   h2 {
     font-size: 1.875rem !important;
     line-height: 1.2;
     margin-bottom: 1rem;
   }
+
   p {
     font-size: 1.125rem !important;
   }
