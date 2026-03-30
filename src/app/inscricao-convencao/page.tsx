@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header";
+import Footer from "@/components/layout/Footer/page";
+import Header from "@/components/layout/Header";
 import InscricaoClient from "./InscricaoClient";
 import style from "./page.module.css";
 

@@ -1,0 +1,42 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-900);
+    color: var(--gray-100);
+    text-align: center;
+}
+
+.logo {
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.content {
+    max-width: 90%;
+}
+
+.title {
+    color: var(--color-yes);
+    margin-bottom: 1rem;
+
+}
+
+.text1 {
+    font-weight: 600;
+}
+
+.text2 {
+
+    margin-top: 1rem;
+    color: var(--gray-400);
+    font-size: 1rem;
+}
+
+@media (min-width: 1440px) {
+    .logo {
+        width: 50%;
+    }
+}

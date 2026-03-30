@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header";
-import PageBuild from "@/components/PageBuilder";
+import Footer from "@/components/layout/Footer/page";
+import Header from "@/components/layout/Header";
+import PageBuild from "@/components/sections/PageBuilder";
 
 export default function ProgramacaoPage() {
   return (

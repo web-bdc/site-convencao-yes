@@ -1,8 +1,8 @@
-import BannerHome from "@/components/BannerHome";
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header";
-import Main from "@/components/Main";
-import ScrollTop from "@/components/ScrollTop";
+import Footer from "@/components/layout/Footer/page";
+import Header from "@/components/layout/Header";
+import ScrollTop from "@/components/layout/ScrollTop";
+import BannerHome from "@/components/sections/BannerHome";
+import Main from "@/components/sections/Main";
 
 export default function Home() {
   return (

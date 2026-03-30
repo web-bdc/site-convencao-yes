@@ -1,5 +1,5 @@
 import { Menu } from "lucide-react";
-import MenuList from "../MenuList/index";
+import MenuList from "../../layout/Header/MenuList/index";
 import Sheet from "../SheetMenu";
 import styles from "./styles.module.css";
 

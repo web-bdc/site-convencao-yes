@@ -1,13 +1,13 @@
 "use client";
 
-import Countdown from "@/components/Countdown";
+import Countdown from "@/components/sections/Countdown";
 
 
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header";
-import FormConvidados from "@/components/InscricaoUnica/FormConvidados";
-import FormResponsavel from "@/components/InscricaoUnica/FormResponsavel";
-import Subtotal from "@/components/InscricaoUnica/Subtotal";
+import Footer from "@/components/layout/Footer/page";
+import Header from "@/components/layout/Header";
+import FormConvidados from "@/components/sections/InscricaoUnica/FormConvidados";
+import FormResponsavel from "@/components/sections/InscricaoUnica/FormResponsavel";
+import Subtotal from "@/components/sections/InscricaoUnica/Subtotal";
 import { calcSubtotalCents } from "@/lib/pricing";
 import { inscricaoSchema, type Inscricao, type Participante } from "@/lib/schemas";
 import { onlyDigits } from "@/lib/validators";

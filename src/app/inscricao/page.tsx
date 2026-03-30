@@ -1,8 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-import Footer from "@/components/Footer/page";
-import Header from "@/components/Header";
+import Footer from "@/components/layout/Footer/page";
+import Header from "@/components/layout/Header";
 import style from "./page.module.css";
 
 export default function InscricaoPage() {

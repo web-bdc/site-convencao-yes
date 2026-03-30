@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import DropMenu from "../DropMenu/";
+
+import DropMenu from "../../../ui/DropMenu";
 import styles from "./styles.module.css";
 
 export default function HeaderMobile() {
