@@ -55,3 +55,6 @@ api-project-*.json
 
 # pnpm
 pnpm-debug.log*
+
+# docs
+docs/

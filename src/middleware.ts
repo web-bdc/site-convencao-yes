@@ -1,14 +1,14 @@
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const currentPath = request.nextUrl.pathname;
-  
+
   // 1. Liberamos SOMENTE a porta de entrada (a mágica do SSO), assets vitais e nossas APIs
   if (
     currentPath.startsWith('/_next') ||
     currentPath.startsWith('/api') ||
-    currentPath.startsWith('/acesso/') || 
+    currentPath.startsWith('/acesso/') ||
     currentPath === '/acesso-negado' ||
     currentPath.includes('.') // Permite carregar imagens como .png, .svg do layout
   ) {
