@@ -1,0 +1,75 @@
+.formGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.formLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  color: var(--color-yes);
+}
+
+.formLabel h3 {
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.input:active,
+.input:focus {
+  border-color: var(--color-yes);
+  outline: none;
+  transition: border-color 0.1s ease-in-out;
+}
+.inputData {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.inputData::-webkit-inner-spin-button,
+.inputData::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.inputAcomodacao {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.inputTamanhoCamisa {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 600px) {
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .formLabel {
+    flex-basis: calc(50% - 0.75rem);
+  }
+}

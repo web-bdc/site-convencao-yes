@@ -1,0 +1,151 @@
+.main {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+
+  height: auto;
+}
+
+.mainContent h1 {
+  text-align: center;
+  font-size: 1.65rem;
+  color: transparent;
+  background: var(--gradient-primary-reverse);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 2.4rem;
+}
+
+.highlight::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-yes);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.cardsContainerMain {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galeriaContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoContainer {
+  width: 100%;
+
+  overflow: hidden;
+  background-color: transparent;
+  padding: 0;
+}
+
+.localContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.faqContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+}
+
+.contatoContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mainContent h1 {
+    font-size: 2rem !important;
+  }
+  .galeriaContainer {
+    max-width: 720px;
+    padding: 1.5rem 0;
+  }
+  .videoContainer {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainContent h1 {
+    font-size: 2.5rem !important;
+  }
+  .galeriaContainer {
+    max-width: 900px;
+    padding: 1.5rem 0;
+  }
+  .videoContainer {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mainContent h1 {
+    font-size: 2.75rem !important;
+  }
+  .galeriaContainer {
+    max-width: 1200px;
+    padding: 2rem 0;
+    height: 550px;
+  }
+  .videoContainer {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .localContainer {
+    padding: 0;
+    background: var(--primary-color);
+  }
+  .faqContainer {
+    padding: 0;
+  }
+  .contatoContainer {
+    padding: 0;
+  }
+}

@@ -1,0 +1,54 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.logo:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.menuLinks::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  margin: 0.75rem 0;
+  background: var(--gradient-primary);
+}
+
+.menuLink {
+  width: 100%;
+  display: block;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  text-decoration: none;
+  border: none;
+  transition: all 0.2s ease;
+
+  color: transparent;
+  background: var(--gradient-primary-reverse);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menuLink:hover {
+  color: var(--color-primary-hover);
+}

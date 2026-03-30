@@ -1,0 +1,131 @@
+/* Variáveis CSS para cores do tema */
+:root {
+  --color-primary: #f4f4f5;
+  --color-yes: #ed2939;
+  --color-primary-hover: #9b2235;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --color-secondary: #9a9b9c;
+  --color-accent: #f1f5f9;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-success: #16a34a;
+  --color-text: #333333;
+  --color-destructive: #b91c1c;
+  --border-radius: 20px;
+  --box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --gradient-primary: linear-gradient(
+    -60deg,
+    #e8283a 31%,
+    #eb392d 50%,
+    #ee4823 63%,
+    #f9aa65 88%,
+    #ffdc87 100%
+  );
+  --gradient-primary-reverse: linear-gradient(
+    60deg,
+    #e8283a 31%,
+    #eb392d 50%,
+    #ee4823 63%,
+    #f9aa65 88%,
+    #ffdc87 100%
+  );
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset de elementos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 1.45rem !important;
+}
+h2 {
+  font-size: 1.25rem !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 2.25rem !important;
+  }
+  h2 {
+    font-size: 1.875rem !important;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.125rem !important;
+  }
+}

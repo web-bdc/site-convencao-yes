@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.295);
+  z-index: 50;
+  opacity: 0;
+
+  transition: opacity 0.2s ease, initial-letter 0.2s ease-in-out;
+}
+
+.overlay.open {
+  opacity: 1;
+  transition: opacity 0.3s ease, initial-letter 0.3s ease-in-out;
+}
+
+.overlay.close {
+  opacity: 0;
+  transition: opacity 0.3s ease, initial-letter 0.3s ease-in-out;
+}
+
+.sheet {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+
+  max-width: 280px;
+
+  background: var(--color-background);
+  box-shadow: -4px 0 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet.open {
+  animation: slideIn 0.4s forwards;
+  opacity: 1;
+}
+.sheet.close {
+  animation: slideOut 0.8s forwards;
+  opacity: 0;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.closeIcon {
+  color: var(--color-yes);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    right: -100%;
+  }
+  to {
+    transform: translateX(0);
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    right: 0;
+  }
+  to {
+    transform: translateX(100%);
+    right: -100%;
+  }
+}

@@ -1,0 +1,700 @@
+{
+  "escolas": [
+    {
+      "id": 1001,
+      "nome": "YES! Aldebaran",
+      "cidade": "Maceió",
+      "estado": "Alagoas"
+    },
+    {
+      "id": 1002,
+      "nome": "YES! Pátio",
+      "cidade": "Maceió",
+      "estado": "Alagoas"
+    },
+    {
+      "id": 1003,
+      "nome": "YES! Inhapi",
+      "cidade": "Inhapi",
+      "estado": "Alagoas"
+    },
+    {
+      "id": 1004,
+      "nome": "YES! Campos Elíseos",
+      "cidade": "Manaus",
+      "estado": "Amazonas"
+    },
+    {
+      "id": 1005,
+      "nome": "YES! Crespo",
+      "cidade": "Manaus",
+      "estado": "Amazonas"
+    },
+    {
+      "id": 1006,
+      "nome": "YES! Ceilândia",
+      "cidade": "Brasília",
+      "estado": "Distrito Federal"
+    },
+    {
+      "id": 1007,
+      "nome": "YES! Gama",
+      "cidade": "Brasília",
+      "estado": "Distrito Federal"
+    },
+    {
+      "id": 1008,
+      "nome": "YES! Vicente Pires",
+      "cidade": "Brasília",
+      "estado": "Distrito Federal"
+    },
+    {
+      "id": 1009,
+      "nome": "YES! Cachoeiro de Itapemirim",
+      "cidade": "Cachoeiro de Itapemirim",
+      "estado": "Espírito Santo"
+    },
+    {
+      "id": 1010,
+      "nome": "YES! Jardim Camburi",
+      "cidade": "Vitória",
+      "estado": "Espírito Santo"
+    },
+    {
+      "id": 1011,
+      "nome": "YES! Formosa",
+      "cidade": "Formosa",
+      "estado": "Goiás"
+    },
+    {
+      "id": 1012,
+      "nome": "YES! Bom Despacho",
+      "cidade": "Bom Despacho",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 1013,
+      "nome": "YES! Cascatinha",
+      "cidade": "Juiz de Fora",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 1014,
+      "nome": "YES! São Mateus",
+      "cidade": "Juiz de Fora",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 1015,
+      "nome": "YES! Machado",
+      "cidade": "Machado",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 1016,
+      "nome": "YES! Olianda",
+      "cidade": "Olinda",
+      "estado": "Pernambuco"
+    },
+    {
+      "id": 1017,
+      "nome": "YES! Janga",
+      "cidade": "Paulista",
+      "estado": "Pernambuco"
+    },
+    {
+      "id": 1018,
+      "nome": "YES! Centro",
+      "cidade": "Angra dos Reis",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1019,
+      "nome": "YES! Ilha Grande",
+      "cidade": "Angra dos Reis",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1020,
+      "nome": "YES! Araruama",
+      "cidade": "Araruama",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1021,
+      "nome": "YES! Belford Roxo",
+      "cidade": "Belford Roxo",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1022,
+      "nome": "YES! Heliópolis",
+      "cidade": "Belford Roxo",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1023,
+      "nome": "YES! Lote XV",
+      "cidade": "Belford Roxo",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1024,
+      "nome": "YES! São Cristóvão - Cabo Frio",
+      "cidade": "Cabo Frio",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1025,
+      "nome": "YES! Unamar",
+      "cidade": "Cabo Frio",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1026,
+      "nome": "YES! Barra de São João",
+      "cidade": "Casimiro de Abreu",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1027,
+      "nome": "YES! Imbariê",
+      "cidade": "Duque de Caxias",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1028,
+      "nome": "YES! Jardim Primavera",
+      "cidade": "Duque de Caxias",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1029,
+      "nome": "YES! Santa Cruz da Serra",
+      "cidade": "Duque de Caxias",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1030,
+      "nome": "YES! Xerém",
+      "cidade": "Duque de Caxias",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1031,
+      "nome": "YES! Centro",
+      "cidade": "Duque de Caxias",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1032,
+      "nome": "YES! Guapimirim",
+      "cidade": "Guapimirim",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1033,
+      "nome": "YES! Itaboraí",
+      "cidade": "Itaboraí",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1034,
+      "nome": "YES! Itaguaí",
+      "cidade": "Itaguaí",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1035,
+      "nome": "YES! Engenheiro Pedreira",
+      "cidade": "Japeri",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1036,
+      "nome": "YES! Macaé",
+      "cidade": "Macaé",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1037,
+      "nome": "YES! Piabetá",
+      "cidade": "Magé",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1038,
+      "nome": "YES! Praia de Mauá",
+      "cidade": "Magé",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1039,
+      "nome": "YES! Itaipuaçu",
+      "cidade": "Maricá",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1040,
+      "nome": "YES! Mesquita",
+      "cidade": "Mesquita",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1041,
+      "nome": "YES! Nilópolis",
+      "cidade": "Nilópolis",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1042,
+      "nome": "YES! Barreto",
+      "cidade": "Niterói",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1043,
+      "nome": "YES! Fonseca",
+      "cidade": "Niterói",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1044,
+      "nome": "YES! Icaraí",
+      "cidade": "Niterói",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1045,
+      "nome": "YES! Itaipu",
+      "cidade": "Niterói",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1046,
+      "nome": "YES! Miguel Couto",
+      "cidade": "Nova Iguaçu",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1047,
+      "nome": "YES! Nova Iguaçu",
+      "cidade": "Nova Iguaçu",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1048,
+      "nome": "YES! Petrópolis",
+      "cidade": "Petrópolis",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1049,
+      "nome": "YES! Queimados",
+      "cidade": "Queimados",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1050,
+      "nome": "YES! Rio das Ostras",
+      "cidade": "Rio das Ostras",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1051,
+      "nome": "YES! Abolição",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1052,
+      "nome": "YES! Anchieta",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1053,
+      "nome": "YES! Bangu",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1054,
+      "nome": "YES! Barra da Tijuca",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1055,
+      "nome": "YES! Barra II - Downtown",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1056,
+      "nome": "YES! Barra Olímpica",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1057,
+      "nome": "YES! Bonsucesso",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1058,
+      "nome": "YES! Botafogo",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1059,
+      "nome": "YES! Camorim-Crystal Mall",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1060,
+      "nome": "YES! Campo Grande",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1061,
+      "nome": "YES! Campo Grande West",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1062,
+      "nome": "YES! Cascadura",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1063,
+      "nome": "YES! Copacabana",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1064,
+      "nome": "YES! Curicica",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1065,
+      "nome": "YES! Engenho de dentro",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1066,
+      "nome": "YES! Gardênia Azul",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1067,
+      "nome": "YES! Grajaú",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1068,
+      "nome": "YES! Guadalupe",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1069,
+      "nome": "YES! Ilha do Governador",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1070,
+      "nome": "YES! Irajá",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1071,
+      "nome": "YES! Jardim América",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1072,
+      "nome": "YES! Jardim Bangu",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1073,
+      "nome": "YES! Lapa",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1074,
+      "nome": "YES! Madureira",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1075,
+      "nome": "YES! Marechal Hermes",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1076,
+      "nome": "YES! Méier",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1077,
+      "nome": "YES! Méier II",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1078,
+      "nome": "YES! Olaria",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1079,
+      "nome": "YES! Paciência",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1080,
+      "nome": "YES! Paracambi",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1081,
+      "nome": "YES! Pavuna",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1082,
+      "nome": "YES! Pedra de Guaratiba",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1083,
+      "nome": "YES! Penha",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1084,
+      "nome": "YES! Ramos",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1085,
+      "nome": "YES! Realengo",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1086,
+      "nome": "YES! Recreio",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1087,
+      "nome": "YES! Rio Comprido",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1088,
+      "nome": "YES! Rio das Pedras",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1089,
+      "nome": "YES! Rocha Miranda",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1090,
+      "nome": "YES! Rocinha",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1091,
+      "nome": "YES! Santa Cruz",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1092,
+      "nome": "YES! São Cristovão",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1093,
+      "nome": "YES! Sepetiba",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1094,
+      "nome": "YES! Sion Laranjeiras",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1095,
+      "nome": "YES! Taquara",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1096,
+      "nome": "YES! Tijuca",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1097,
+      "nome": "YES! Vila da Penha",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1098,
+      "nome": "YES! Vila Isabel",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1099,
+      "nome": "YES! Vila São Luis",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1100,
+      "nome": "YES! Vista Alegre",
+      "cidade": "Rio de Janeiro",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1101,
+      "nome": "YES! Vilar dos Teles",
+      "cidade": "São João de Meriti",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1102,
+      "nome": "YES! Alcântara",
+      "cidade": "São Gonçalo",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1103,
+      "nome": "YES! São Gonçalo",
+      "cidade": "São Gonçalo",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1104,
+      "nome": "YES! São Pedro da Aldeia",
+      "cidade": "São Pedro da Aldeia",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1105,
+      "nome": "YES! Teresópolis",
+      "cidade": "Teresópolis",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1106,
+      "nome": "YES! Três Rios",
+      "cidade": "Três Rios",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1107,
+      "nome": "YES! Volta Redonda",
+      "cidade": "Volta Redonda",
+      "estado": "Rio de Janeiro"
+    },
+    {
+      "id": 1108,
+      "nome": "YES! Osório",
+      "cidade": "Osório",
+      "estado": "Rio Grande do Sul"
+    },
+    {
+      "id": 1109,
+      "nome": "YES! Santa Maria",
+      "cidade": "Santa Maria",
+      "estado": "Rio Grande do Sul"
+    },
+    {
+      "id": 1110,
+      "nome": "YES! Braço Norte",
+      "cidade": "Braço do Norte",
+      "estado": "Santa Catarina"
+    },
+    {
+      "id": 1111,
+      "nome": "YES! Tubarão",
+      "cidade": "Tubarão",
+      "estado": "Santa Catarina"
+    },
+    {
+      "id": 1112,
+      "nome": "YES! Jardim Morada do Sol",
+      "cidade": "Indaiatuba",
+      "estado": "São Paulo"
+    },
+    {
+      "id": 1113,
+      "nome": "YES! Assunção",
+      "cidade": "São Bernardo do Campo",
+      "estado": "São Paulo"
+    },
+    {
+      "id": 1114,
+      "nome": "YES! Central SBC",
+      "cidade": "São Bernardo do Campo",
+      "estado": "São Paulo"
+    },
+    {
+      "id": 1115,
+      "nome": "YES! Jardim do Mar",
+      "cidade": "São Bernardo do Campo",
+      "estado": "São Paulo"
+    },
+    {
+      "id": 1116,
+      "nome": "YES! São José do Rio Pardo",
+      "cidade": "São José do Rio Pardo",
+      "estado": "São Paulo"
+    }
+  ]
+}

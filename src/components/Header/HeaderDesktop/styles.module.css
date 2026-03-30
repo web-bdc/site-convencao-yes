@@ -1,0 +1,147 @@
+.headerDesktop {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  padding: 0;
+  position: fixed;
+
+  background: var(--gradient-primary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.headerDesktop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+  background-image: url("/textura/1.svg");
+  background-repeat: repeat;
+  background-size: 800px;
+  opacity: 0.3;
+  animation: moveTexture 20s linear infinite;
+}
+
+@keyframes moveTexture {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 800px 400px;
+  }
+}
+
+.headerDesktop.scrolled::before {
+  opacity: 0.95;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.logoLink:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+
+.logo img {
+  width: auto;
+  height: 80px;
+  padding: 1.25rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.menuLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-background);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.menuLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary-reverse);
+  transition: width 0.3s ease;
+}
+
+.menuLink:hover {
+  color: var(--color-primary-hover);
+}
+
+.menuLink:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
+}

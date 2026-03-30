@@ -1,0 +1,24 @@
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+}
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: transparent;
+  background: var(--gradient-primary-reverse);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: transparent;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

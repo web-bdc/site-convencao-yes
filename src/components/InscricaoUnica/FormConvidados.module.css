@@ -1,0 +1,171 @@
+.formGrid {
+  width: 100%;
+  margin: 1.2rem 0;
+  background-color: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.formItem {
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formBody {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.formTitle {
+  font-size: 1.1rem;
+  color: transparent;
+  background: var(--gradient-primary-reverse);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-yes);
+}
+
+.addButton {
+  width: 90%;
+  height: 40px;
+  background: var(--gradient-primary);
+  background-size: 200% 200%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  animation: buttonAppear 0.3s ease-in-out, infinitGlow 3s ease-in-out infinite;
+}
+
+@keyframes infinitGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes buttonAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonHover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--gradient-primary-reverse);
+  padding: 6px;
+  border-radius: 6px;
+
+  width: 32px;
+  height: 32px;
+  animation: buttonClick 0.2s ease-in-out;
+}
+
+.removeButton:hover {
+  background-color: var(--color-primary-hover);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.addButton:hover {
+  background-color: var(--color-primary-hover);
+  transition: background-color 0.2s ease-in-out;
+  animation: buttonHover 0.3s ease-in-out;
+}
+
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 600px) {
+  .formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .formItem {
+    margin-bottom: 0;
+  }
+}
