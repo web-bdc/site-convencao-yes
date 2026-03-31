@@ -1,23 +1,22 @@
 "use client";
-import Countdown from "@/components/sections/Countdown";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { inscricaoSchema, type Inscricao, type Participante } from "@/lib/schemas";
 import { onlyDigits } from "@/lib/validators";
 import { enviarInscricao } from "@/services/convencaoService";
 import { calcSubtotalCents } from "@/services/pricing/pricing";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import FormConvidados from "../_components/InscricaoUnica/FormConvidados";
 import FormResponsavel from "../_components/InscricaoUnica/FormResponsavel";
 import Subtotal from "../_components/InscricaoUnica/Subtotal";
 import style from "./page.module.css";
 
-interface InscricaoClientProps {
-    targetDate: string;
+interface Props {
+    session: any;
 }
 
-export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
+export default function InscricaoExtraClient({ session }: Props) {
     const [dados, setDados] = useState<Partial<Inscricao>>({
         acomodacao: "Dupla",
         participantes: [],
@@ -28,12 +27,11 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
 
     const [loading, setLoading] = useState(false);
     const [serverError, setServerError] = useState<string | null>(null);
-    const [shareOpen, setShareOpen] = useState(false);
     const [modalSpinLoading, setModalSpinLoading] = useState(false);
-    const [shareAccepted, setShareAccepted] = useState(false);
     const [showValidation, setShowValidation] = useState(false);
     const [shake, setShake] = useState(false);
 
+    // Validação reativa do formulário
     const validation = useMemo(() => {
         const errorsTop: Partial<Record<keyof Inscricao, string>> = {};
         const errorsGuests: Array<Partial<Record<keyof Participante, string>>> = [];
@@ -58,70 +56,60 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
         if (!result.success) {
             const issues = result.error.issues ?? [];
             const topLabels: Record<string, string> = {
-                nome_responsavel: "Nome",
-                cpf_responsavel: "CPF",
-                email: "Email",
-                telefone: "Telefone",
-                unidade_id: "Escola",
-                data_nascimento_responsavel: "Data Nascimento",
+                nome_responsavel: "Nome do responsável",
+                cpf_responsavel: "CPF do responsável",
+                email: "Email do responsável",
+                telefone: "Telefone do responsável",
+                unidade_id: "Escola do responsável",
+                data_nascimento_responsavel: "Data de nascimento do responsável",
                 acomodacao: "Acomodação",
+                forma_pagamento: "Forma de pagamento",
             };
             const guestLabels: Record<string, string> = {
-                nome_participante: "Nome",
-                cpf_participante: "CPF",
-                rg_participante: "RG",
-                data_nascimento_participante: "Data Nascimento",
+                nome_participante: "Nome do participante",
+                cpf_participante: "CPF do participante",
+                rg_participante: "RG do participante",
+                data_nascimento_participante: "Data de nascimento",
+                cargo_participante: "Cargo",
+                tamanho_camisa_participante: "Tamanho da camisa",
+                unidade_id_participante: "Escola",
             };
 
             for (const it of issues) {
                 const path = it.path;
                 if (path[0] === "participantes" && typeof path[1] === "number") {
                     const idx = path[1] as number;
-                    const field = String(path[2] ?? "") as keyof Participante;
+                    const field = String(path[2] ?? "campo") as keyof Participante;
                     if (!errorsGuests[idx]) errorsGuests[idx] = {};
                     const msg = normalizeMessage(it.message);
-                    if (field && !errorsGuests[idx][field]) errorsGuests[idx][field] = msg;
-                    const label = guestLabels[field as string] ?? field;
+                    if (!errorsGuests[idx][field]) errorsGuests[idx][field] = msg;
+                    const label = guestLabels[field as string] ?? String(field);
                     messages.push(`Convidado ${idx + 1}: ${label} - ${msg}`);
                 } else {
                     const key = String(path[0] ?? "") as keyof Inscricao;
                     const msg = normalizeMessage(it.message);
                     if (key && !errorsTop[key]) errorsTop[key] = msg;
-                    const label = topLabels[key as string] ?? key;
+                    const label = topLabels[key as string] ?? String(key || "campo");
                     messages.push(`${label}: ${msg}`);
                 }
             }
             return { ok: false, errorsTop, errorsGuests, messages };
         }
+
         return { ok: true, data: result.data as Inscricao, messages: [] };
     }, [dados]);
 
-    const handleChangeResponsavel = (next: Partial<Inscricao>) => {
-        if (next?.acomodacao === "Individual" && (dados.acomodacao !== "Individual")) {
-            setDados({ ...next, participantes: [] });
-            setShareAccepted(false);
-            return;
-        }
-        setDados(next);
-    };
-
-    const triggerShake = () => {
-        setShake(true);
-        setTimeout(() => setShake(false), 500);
-    };
-
-    const doSubmit = async (acceptedOverride?: boolean) => {
+    const doSubmit = async () => {
         setLoading(true);
         setModalSpinLoading(true);
         setServerError(null);
         try {
-            const accepted = typeof acceptedOverride === "boolean" ? acceptedOverride : (shareAccepted || false);
             const unidadeIdNum = Number(dados.unidade_id);
-
             const payload = {
                 ...dados,
-                dividir_quarto_aceite: accepted,
+                dividir_quarto_aceite: false,
                 unidade_id: unidadeIdNum,
+                data_nascimento_responsavel: dados.data_nascimento_responsavel || "",
                 forma_pagamento: Number(dados.forma_pagamento ?? 3),
                 quantidade_parcelas: Number(dados.parcelas || dados.installments || 10),
                 participantes: (dados.participantes || []).map((p, i) => ({
@@ -137,6 +125,7 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
                 valor: payload.valor,
                 data_nascimento_responsavel: payload.data_nascimento_responsavel,
                 participantes: payload.participantes,
+                ignoreResponsible: true,
             });
 
             const payloadWithTotals = {
@@ -152,7 +141,7 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
             if (resp?.link) {
                 window.location.href = resp.link;
             } else {
-                setServerError(`Resposta inesperada do servidor.`);
+                setServerError(`Resposta inesperada: ${JSON.stringify(resp)}`);
             }
         } catch (e: any) {
             setServerError(e?.message || String(e));
@@ -160,6 +149,11 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
             setLoading(false);
             setModalSpinLoading(false);
         }
+    };
+
+    const triggerShake = () => {
+        setShake(true);
+        setTimeout(() => setShake(false), 500);
     };
 
     const onSubmit = async () => {
@@ -171,11 +165,12 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
             return;
         }
 
-        const noGuests = !Array.isArray(dados.participantes) || dados.participantes.length === 0;
-        if ((dados.acomodacao === "Dupla" || dados.acomodacao === "Tripla") && noGuests && !shareAccepted) {
-            setShareOpen(true);
+        if (!dados.participantes || dados.participantes.length === 0) {
+            setServerError('Adicione pelo menos um Participante Extra.');
+            triggerShake();
             return;
         }
+
         await doSubmit();
     };
 
@@ -183,14 +178,14 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
         <>
             <Header />
             <main className={style.mainContainer}>
-                <Countdown targetDate={targetDate} />
                 <section className={style.sectionMain}>
-                    <h2>Inscrição Convenção</h2>
-                    <p>Preencha os dados e finalize sua participação na Convenção 2026.</p>
+                    <h2>Inscrição Participante Extra</h2>
+                    <p>Preencha os dados do responsável financeiro (pagante) e adicione os participantes extras abaixo.</p>
 
+                    {/* Resumo de Erros no Topo */}
                     {showValidation && !validation.ok && (
                         <div className={style.errorSummary}>
-                            <h4><AlertCircle size={20} /> Verifique os campos pendentes</h4>
+                            <h4><AlertCircle size={20} /> Ops! Revise o formulário</h4>
                             <ul className={style.errorList}>
                                 {validation.messages.map((m, i) => (
                                     <li key={i} className={style.errorItem}>
@@ -203,39 +198,37 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
                     )}
 
                     <section className={style.formSection}>
-                        <h3 className={style.formTitle}>Informações do Responsável</h3>
+                        <h3 className={style.formTitle}>Responsável Financeiro</h3>
                         <FormResponsavel
                             value={dados}
-                            onChange={handleChangeResponsavel}
+                            onChange={(next) => setDados(next)}
                             errors={showValidation && !validation.ok ? validation.errorsTop : {}}
                         />
                     </section>
 
-                    {(dados.acomodacao === "Dupla" || dados.acomodacao === "Tripla") && (
-                        <section className={style.formSection}>
-                            <h3 className={style.formTitle}>Acompanhantes / Convidados</h3>
-                            <FormConvidados
-                                value={Array.isArray(dados.participantes) ? (dados.participantes as Participante[]) : []}
-                                onChange={(list) => setDados({ ...dados, participantes: list })}
-                                unidadeId={Number(dados.unidade_id) || undefined}
-                                errors={showValidation && !validation.ok ? validation.errorsGuests : []}
-                            />
-                        </section>
-                    )}
+                    <section className={style.formSection}>
+                        <h3 className={style.formTitle}>Participantes Extras</h3>
+                        <FormConvidados
+                            value={Array.isArray(dados.participantes) ? (dados.participantes as Participante[]) : []}
+                            onChange={(list) => setDados({ ...dados, participantes: list })}
+                            unidadeId={Number(dados.unidade_id) || undefined}
+                            errors={showValidation && !validation.ok ? validation.errorsGuests : []}
+                        />
+                    </section>
 
                     <section className={style.formSection}>
                         <h3 className={style.formTitle}>Forma de Pagamento</h3>
-                        <div style={{ display: "grid", gap: 12, padding: "10px 0" }}>
+                        <div style={{ display: "grid", gap: 12, paddingTop: 10 }}>
                             {[
-                                { id: 3, label: "PIX (5% de Desconto)" },
+                                { id: 3, label: "PIX (5% Desconto)" },
                                 { id: 1, label: "Cartão de Crédito" },
                                 { id: 2, label: "Boleto Bancário" }
                             ].map((opt) => (
-                                <label key={opt.id} style={{ display: "flex", gap: 10, alignItems: "center", cursor: "pointer" }}>
+                                <label key={opt.id} style={{ display: "flex", gap: 10, alignItems: "center", cursor: "pointer", fontSize: "1rem" }}>
                                     <input
                                         type="radio"
                                         name="forma_pagamento"
-                                        style={{ width: 18, height: 18, accentColor: "var(--color-yes)" }}
+                                        style={{ accentColor: "var(--color-yes)", width: 18, height: 18 }}
                                         checked={(dados.forma_pagamento ?? 3) === opt.id}
                                         onChange={() => setDados({ ...dados, forma_pagamento: opt.id })}
                                     />
@@ -246,12 +239,12 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
                     </section>
 
                     <section className={style.formSection}>
-                        <Subtotal dados={dados as Record<string, unknown>} />
+                        <Subtotal dados={dados as Record<string, unknown>} ignoreResponsible={true} />
                     </section>
 
                     {serverError && (
                         <div className={`${style.errorSummary} ${shake ? style.shake : ""}`}>
-                            <h4><AlertCircle size={20} /> Erro ao processar inscrição</h4>
+                            <h4><AlertCircle size={20} /> Erro ao processar</h4>
                             <p className={style.errorItem}>{serverError}</p>
                         </div>
                     )}
@@ -262,28 +255,15 @@ export default function InscricaoClient({ targetDate }: InscricaoClientProps) {
                             className={`${style.buttonSend} ${shake ? style.shake : ""}`}
                             disabled={loading}
                         >
-                            {loading ? "Processando..." : "Confirmar e Ir para Pagamento"}
+                            {loading ? "Processando..." : "Finalizar Inscrição Extra"}
                         </button>
                     </div>
-
-                    {shareOpen && (
-                        <div className={style.modalOverlay}>
-                            <div className={style.modalBox}>
-                                <h4>Aceitar dividir quarto?</h4>
-                                <p>Como não adicionou convidados para a acomodação {dados.acomodacao}, você será alocado com outros participantes. Confirma?</p>
-                                <div className={style.modalActions}>
-                                    <button className={style.buttonCancel} onClick={() => setShareOpen(false)}>Cancelar</button>
-                                    <button className={style.buttonSend} onClick={async () => { setShareAccepted(true); setShareOpen(false); await doSubmit(true); }}>Confirmar</button>
-                                </div>
-                            </div>
-                        </div>
-                    )}
 
                     {modalSpinLoading && (
                         <section className={style.modalOverlay}>
                             <div className={style.modalBoxSpin}>
                                 <div className={style.spinner}></div>
-                                <p>Sincronizando dados...</p>
+                                <p>Validando dados e preparando pagamento...</p>
                             </div>
                         </section>
                     )}

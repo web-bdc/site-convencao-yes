@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/convecao/:path*",
+        source: "/api/convencao/:path*",
         destination: "https://api.yes.com.br/api/ApiConvecao/:path*",
       },
     ];

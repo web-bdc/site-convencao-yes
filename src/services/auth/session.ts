@@ -1,10 +1,11 @@
 import { cookies } from "next/headers";
 import { PortalClientModel } from "../../models/portalClient";
+import { SessionData } from "../../types/session";
 
 const SESSION_COOKIE_NAME = "yes_convencao_client_session";
 
 export async function createSession(clientInfo: PortalClientModel) {
-  const sessionData = {
+  const sessionData: SessionData = {
     id: clientInfo.id_clients,
     unidadeId: clientInfo.unidade_id,
     nome: clientInfo.nome_unidade,
@@ -27,7 +28,7 @@ export async function createSession(clientInfo: PortalClientModel) {
   });
 }
 
-export async function getSession() {
+export async function getSession(): Promise<SessionData | null> {
   const cookieStore = await cookies();
   const sessionCookie = cookieStore.get(SESSION_COOKIE_NAME);
 
@@ -35,7 +36,7 @@ export async function getSession() {
 
   try {
     const rawData = Buffer.from(sessionCookie.value, "base64").toString("utf-8");
-    return JSON.parse(rawData);
+    return JSON.parse(rawData) as SessionData;
   } catch (err) {
     return null;
   }

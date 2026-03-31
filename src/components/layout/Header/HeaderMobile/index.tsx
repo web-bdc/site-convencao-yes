@@ -29,7 +29,7 @@ export default function HeaderMobile() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/#home" onClick={(e) => handleMenuClick(e, "/#home")}>
+          <Link href="/">
             <Image src="/logos/logo-horizontal-branca.svg" alt="Logo" width={120} height={40} priority />
           </Link>
         </div>

@@ -21,7 +21,10 @@ export function middleware(request: NextRequest) {
   // Se o cookie não existir (não passou pela API da YES), ele é expulso do site.
   if (!sessionCookie || !sessionCookie.value) {
     console.log(`[Segurança] Bloqueando acesso direto à rota pura: ${currentPath}`);
-    return NextResponse.redirect(new URL('/acesso-negado', request.url));
+    const urlErro = request.nextUrl.clone();
+    urlErro.pathname = "/acesso-negado";
+    urlErro.search = ""; // Sanitização explícita
+    return NextResponse.redirect(urlErro);
   }
 
   // 3. Se ele tiver o Cookie gerado pelo acesso mágico, a navegação para qualquer tela é livre!

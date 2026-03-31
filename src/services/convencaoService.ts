@@ -20,7 +20,7 @@ export async function enviarInscricao(
     const id = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
-      const response = await fetch("/api/convecao", {
+      const response = await fetch("/api/convencao", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: payload,

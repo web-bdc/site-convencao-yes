@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import styles from "./styles.module.css";
 
 const menuItems = [
-  { id: "home", href: "/#home", label: "Home" },
+  { id: "home", href: "/", label: "Home" },
   { id: "inscricao", href: "/inscricao", label: "Inscrições" },
   { id: "programacao", href: "/programacao", label: "Programação" },
   { id: "palestrantes", href: "/palestrantes", label: "Palestrantes" },

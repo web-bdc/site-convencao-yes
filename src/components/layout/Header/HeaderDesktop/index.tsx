@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 
 const menuItems = [
-  { href: "/#home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "/inscricao", label: "Inscrição" },
   { href: "/programacao", label: "Programação" },
   { href: "/palestrantes", label: "Palestrantes" },
@@ -60,7 +60,7 @@ export default function HeaderDesktop() {
     <header ref={headerRef} className={`${styles.headerDesktop} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link className={styles.logoLink} href="/#home" onClick={(e) => handleMenuClick(e, "/#home")}>
+          <Link className={styles.logoLink} href="/">
             <Image src="/logos/logo-horizontal-branca.svg" alt="Logo YES! Idiomas" width={120} height={120} />
           </Link>
         </div>
