@@ -1,5 +1,5 @@
 "use client";
-import UseWindowWidth from "@/hook/useWindowWidth";
+import UseWindowWidth from "@/hooks/useWindowWidth";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderMobile from "./HeaderMobile";
 

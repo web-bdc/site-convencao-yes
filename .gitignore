@@ -58,3 +58,6 @@ pnpm-debug.log*
 
 # docs
 docs/
+
+#agent
+.agent/

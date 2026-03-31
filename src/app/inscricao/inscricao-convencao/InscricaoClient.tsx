@@ -3,16 +3,16 @@
 import Countdown from "@/components/sections/Countdown";
 
 
-import Footer from "@/components/layout/Footer/page";
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import FormConvidados from "@/components/sections/InscricaoUnica/FormConvidados";
-import FormResponsavel from "@/components/sections/InscricaoUnica/FormResponsavel";
-import Subtotal from "@/components/sections/InscricaoUnica/Subtotal";
-import { calcSubtotalCents } from "@/lib/pricing";
 import { inscricaoSchema, type Inscricao, type Participante } from "@/lib/schemas";
 import { onlyDigits } from "@/lib/validators";
-import { enviarInscricao } from "@/services/convecaoService";
+import { enviarInscricao } from "@/services/convencaoService";
+import { calcSubtotalCents } from "@/services/pricing/pricing";
 import { useEffect, useMemo, useState } from "react";
+import FormConvidados from "../_components/InscricaoUnica/FormConvidados";
+import FormResponsavel from "../_components/InscricaoUnica/FormResponsavel";
+import Subtotal from "../_components/InscricaoUnica/Subtotal";
 import style from "./page.module.css";
 
 interface InscricaoClientProps {

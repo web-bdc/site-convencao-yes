@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-import Footer from "@/components/layout/Footer/page";
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import style from "./page.module.css";
 
@@ -10,7 +10,7 @@ export default function InscricaoPage() {
   const router = useRouter();
 
   const handleInscricao = () => {
-    router.push("/inscricao-extra");
+    router.push("/inscricao/inscricao-extra");
   }
 
   return (
@@ -68,7 +68,7 @@ export default function InscricaoPage() {
                     className={style.button}
                     onClick={handleInscricao}
                   >
-                    Incriação
+                    Inscrição
                   </button>
                 </div>
               </li>

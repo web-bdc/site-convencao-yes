@@ -1,6 +1,6 @@
 "use client";
-import { calcSubtotalCents } from "@/lib/pricing";
-import style from "./SubTotal.module.css";
+import { calcSubtotalCents } from "@/services/pricing/pricing";
+import style from "./Subtotal.module.css";
 
 type Props = {
   dados: Record<string, unknown>;

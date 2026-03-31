@@ -1,5 +1,5 @@
-import { createSession } from "../lib/session";
 import { portalHttpClient } from "./api/portalHttpClient";
+import { createSession } from "./auth/session";
 
 export class AccessControlService {
   /**

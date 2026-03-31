@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { PortalClientModel } from "../models/portalClient";
+import { PortalClientModel } from "../../models/portalClient";
 
 const SESSION_COOKIE_NAME = "yes_convencao_client_session";
 
@@ -14,10 +14,10 @@ export async function createSession(clientInfo: PortalClientModel) {
   };
 
   const encodedData = Buffer.from(JSON.stringify(sessionData)).toString("base64");
-  
+
   // ATUALIZAÇÃO NEXT 15+: cookies() agora retorna uma Promise
   const cookieStore = await cookies();
-  
+
   cookieStore.set(SESSION_COOKIE_NAME, encodedData, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -30,7 +30,7 @@ export async function createSession(clientInfo: PortalClientModel) {
 export async function getSession() {
   const cookieStore = await cookies();
   const sessionCookie = cookieStore.get(SESSION_COOKIE_NAME);
-  
+
   if (!sessionCookie || !sessionCookie.value) return null;
 
   try {

@@ -1,6 +1,6 @@
 import escolasDb from "@/db/escolas.json";
 import { inscricaoSchema } from "@/lib/schemas";
-import { appendInscricaoRow, type SheetRow } from "@/lib/sheets";
+import { appendInscricaoRow, type SheetRow } from "@/services/sheetsService";
 import { NextResponse } from "next/server";
 
 const UPSTREAM = "https://api.yes.com.br/api/ApiConvecao/convecao";
